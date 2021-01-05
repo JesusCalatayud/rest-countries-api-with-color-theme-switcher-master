@@ -1,6 +1,5 @@
+
 const countriesData = [];
-
-
 async function fetchData() {
     const data = await fetch('https://restcountries.eu/rest/v2/all')
         .then(response => response.json())
@@ -19,7 +18,8 @@ async function fetchData() {
 
         });
     countriesData.push(...data)
+    console.log(countriesData);
 };
 
-fetchData();
 
+fetchData();

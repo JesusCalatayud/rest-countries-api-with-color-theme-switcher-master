@@ -1,8 +1,6 @@
 const state = {
 
-    countriesData: [],
-
-    filterOptions: [
+    regionFilterOptions: [
         'Africa',
         'America',
         'Asia',
@@ -10,5 +8,9 @@ const state = {
         'Oceania'
     ],
 
-    filter: []
+    countriesData: [],
+
+    regionFilter: [],
+
+    countryFilter: ''
 }

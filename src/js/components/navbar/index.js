@@ -2,7 +2,7 @@ const navbar = {
 
     renderDropdownMenu() {
         const dropdownMenu = document.querySelector('.dropdown-menu')
-        state.filterOptions.forEach(option => {
+        state.regionFilterOptions.forEach(option => {
             const newItem = document.createElement('LI')
             newItem.setAttribute('class', 'filterItem')
             newItem.innerHTML = `
@@ -11,5 +11,12 @@ const navbar = {
             dropdownMenu.appendChild(newItem)
         })
         helpers.dropdownListener()
+    },
+
+    searchbarHandler() {
+        const searchbar = document.querySelector('input')
+        searchbar.addEventListener('keyup', (event) => {
+            helpers.updateCountryFilter(event.target.value)
+        })
     }
 }

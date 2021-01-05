@@ -3,7 +3,7 @@ const cardComponent = {
     async fetchData() {
         const data = await fetch('https://restcountries.eu/rest/v2/all')
             .then(response => response.json())
-            .then(data => data.map(el => helpers.formatData(el)))
+            .then(data => data.map(el => el))
         helpers.countriesListener(data)
     },
 

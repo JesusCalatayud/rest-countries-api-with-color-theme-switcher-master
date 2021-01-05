@@ -1,0 +1,2 @@
+helpers.renderDropdownMenu()
+cardComponent.fetchData()

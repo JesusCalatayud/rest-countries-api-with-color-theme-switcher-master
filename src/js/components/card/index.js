@@ -9,9 +9,13 @@ const cardComponent = {
 
     renderCards(countries) {
         const container = document.querySelector('#countriesContainer')
-
+        const cardItems = Array.from(document.querySelectorAll('.cardItem'))
+        if (cardItems.length) {
+            cardItems.forEach(item => item.remove())
+        }
         countries.length && countries.forEach(country => {
             const countryCard = document.createElement('DIV')
+            countryCard.setAttribute('class', 'cardItem')
             countryCard.innerHTML = `       
         <div class="card" style="width: 18rem; height: 25rem">
         <img class="card-img-top" style="height: 45%; object-fit: cover;" src=${country.flag} alt="Card image cap">

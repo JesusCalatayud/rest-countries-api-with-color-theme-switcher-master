@@ -8,5 +8,7 @@ const state = {
         'Asia',
         'Europe',
         'Oceania'
-    ]
+    ],
+
+    filter: []
 }

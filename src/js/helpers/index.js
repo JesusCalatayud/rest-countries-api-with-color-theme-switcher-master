@@ -13,18 +13,24 @@ const helpers = {
     },
 
     countriesListener(countries) {
-        state.countriesData.push(...countries)
-        cardComponent.renderCards(state.countriesData)
+        if (!state.countriesData.length) {
+            state.countriesData.push(...countries)
+            return cardComponent.renderCards(state.countriesData)
+        }
+        cardComponent.renderCards(countries)
     },
 
-    renderDropdownMenu() {
-        const dropdownMenu = document.querySelector('.dropdown-menu')
-        state.filterOptions.forEach(option => {
-           const newItem = document.createElement('LI')
-           newItem.innerHTML = `
-           <a class="dropdown-item" href="#">${option}</a>
-           `
-           dropdownMenu.appendChild(newItem)
-        })
+    dropdownListener() {
+        const filterItems = Array.from(document.querySelectorAll('.filterItem'))
+        filterItems.forEach(item => item.addEventListener('click', (event) => {
+            this.updateFilter(event.target.innerHTML)
+        }))
+    },
+
+    updateFilter(value) {
+        state.filter = []
+        state.filter.push(value === 'America' ? 'Americas' : value)
+        const filteredCountries = state.countriesData.filter(country => country.region === state.filter[0])
+        this.countriesListener(filteredCountries)
     }
 }

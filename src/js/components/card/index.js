@@ -28,9 +28,11 @@ const cardComponent = {
         </div>
       </div>
     `
+    countryCard.id = country.alpha3Code 
             container.appendChild(countryCard)
-            countryCard.addEventListener("click",function(){
-                console.log(country.alpha3Code)
+            countryCard.addEventListener("click",function(event){
+                console.log(event.currentTarget.id)
+                window.open(`/src/html/country.html?${event.currentTarget.id}`);          
             })
         })
 

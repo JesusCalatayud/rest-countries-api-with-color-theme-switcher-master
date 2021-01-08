@@ -12,5 +12,7 @@ const state = {
 
     regionFilter: [],
 
-    countryFilter: ''
+    countryFilter: '',
+
+    darkMode: false
 }

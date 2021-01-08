@@ -14,9 +14,20 @@ const navbar = {
     },
 
     searchbarHandler() {
-        const searchbar = document.querySelector('input')
+        const searchbar = document.querySelector('.form-control')
         searchbar.addEventListener('keyup', (event) => {
             helpers.updateCountryFilter(event.target.value)
+        })
+    },
+
+    darkModeToggle() {
+        const darkModeButton = document.querySelector('.switch')
+        darkModeButton.addEventListener('click', (e) => {
+            if (e.target.className === 'slider round') {
+                state.darkMode = !state.darkMode
+                helpers.styleToggler()
+            }
+
         })
     }
 }

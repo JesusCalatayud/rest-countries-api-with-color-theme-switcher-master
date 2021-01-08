@@ -27,4 +27,5 @@ const helpers = {
         const filteredCountries = state.countriesData.filter(country => country.name.toLowerCase().includes(value.toLowerCase()))
         this.countriesListener(filteredCountries)
     }
+
 }

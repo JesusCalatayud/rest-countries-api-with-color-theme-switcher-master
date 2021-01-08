@@ -5,6 +5,7 @@ const cardComponent = {
             .then(response => response.json())
             .then(data => data.map(el => el))
         helpers.countriesListener(data)
+        console.log(data)
     },
 
     renderCards(countries) {
@@ -28,8 +29,14 @@ const cardComponent = {
       </div>
     `
             container.appendChild(countryCard)
+            countryCard.addEventListener("click",function(){
+                console.log(country.alpha3Code)
+            })
         })
+
+
     }
+
 
 
 }
